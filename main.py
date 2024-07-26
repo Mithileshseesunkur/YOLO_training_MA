@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 
-# Load a model
-model = YOLO("yolov8n.yaml")  # build a new model from YAML
-model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
-model = YOLO("yolov8n.yaml").load("yolov8n.pt")  # build from YAML and transfer weights
+model=YOLO("yolov8m.yaml")
 
-# Train the model
-results = model.train(data="coco8.yaml", epochs=100, imgsz=640)
+
+pathCleanedDataset=r"C:\Users\mitarbeiter\PycharmProjects\YOLO_training_MA\model.yaml"
+pathModel=r"C:\Users\mitarbeiter\PycharmProjects\model"
+results=model.train(data=pathCleanedDataset,resume=True,
+                    name="MA_model", project=pathModel,save=True)
