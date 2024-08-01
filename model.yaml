@@ -18,6 +18,6 @@ roboflow:
   version: 3
   workspace: roboflow-gw7yv
 
-path: C:/Users/mitarbeiter/PycharmProjects/cleaned_dataset
+path: C:/Users/mitarbeiter/PycharmProjects/split_dataset
 train: train/images
 val: val/images

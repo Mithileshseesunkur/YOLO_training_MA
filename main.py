@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 def main():
-    model = YOLO("yolov10m.yaml")
+    model = YOLO(r"C:\Users\mitarbeiter\PycharmProjects\model\MA_model\weights\last.pt")
 
     pathCleanedDataset = r"C:\Users\mitarbeiter\PycharmProjects\YOLO_training_MA\model.yaml"
     pathModel = r"C:\Users\mitarbeiter\PycharmProjects\model"
