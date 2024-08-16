@@ -1,10 +1,10 @@
 from ultralytics import YOLO
 
 def main():
-    model = YOLO(r"C:\Users\mitarbeiter\PycharmProjects\model\MA_model\weights\last.pt")
+    model = YOLO(r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA")
 
-    pathCleanedDataset = r"C:\Users\mitarbeiter\PycharmProjects\YOLO_training_MA\model.yaml"
-    pathModel = r"C:\Users\mitarbeiter\PycharmProjects\model"
+    pathCleanedDataset = r"C:\Users\mseesunkur\YOLO\cleaning_dataset\data"
+    pathModel = r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
 
     results = model.train(
         data=pathCleanedDataset,
@@ -12,9 +12,9 @@ def main():
         name="MA_model",
         project=pathModel,
         save=True,
-        device=0,
+        device=[0,1,2],
         patience=50,
-        save_dir=r"C:\Users\mitarbeiter\PycharmProjects\YOLO_training_MA"
+        save_dir=r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
     )
 
 if __name__ == '__main__':
