@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 
 def main():
-    model = YOLO(r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA")
+    model = YOLO("yolov10m.yaml")
 
-    pathCleanedDataset = r"C:\Users\mseesunkur\YOLO\cleaning_dataset\data"
+    pathCleanedDataset = r"C:\Users\mseesunkur\YOLO\cleaning_dataset\data.yaml"
     pathModel = r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
 
     results = model.train(
@@ -12,8 +12,9 @@ def main():
         name="MA_model",
         project=pathModel,
         save=True,
-        device=[0,1,2],
+        device=(0,1,2),
         patience=50,
+        batch=15,
         save_dir=r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
     )
 
