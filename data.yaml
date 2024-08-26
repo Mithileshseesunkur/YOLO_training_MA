@@ -1,0 +1,13 @@
+train: C:/Users/mseesunker/sciebo/cleaned___/train/images
+val: C:/Users/mseesunker/sciebo/cleaned___/val
+test: C:/Users/mseesunker/sciebo/cleaned___/test
+
+nc: 6
+names: ['biker', 'car', 'pedestrian', 'TL Green', 'TL Red', 'truck']
+
+roboflow:
+  workspace: roboflow-gw7yv
+  project: self-driving-car
+  version: 3
+  license: MIT
+  url: https://universe.roboflow.com/roboflow-gw7yv/self-driving-car/dataset/3

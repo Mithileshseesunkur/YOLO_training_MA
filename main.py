@@ -41,7 +41,7 @@ from ultralytics import YOLO
 import os
 import torch
 import torch.distributed as dist
-from ultralytics import YOLO
+
 
 # def init_distributed():
 #     # Set environment variables
@@ -56,10 +56,10 @@ from ultralytics import YOLO
 def main():
     #init_distributed()
 
-    model = YOLO(r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA\MA_model3\weights\last.pt")
+    model = YOLO(r"C:\Users\mseesunker\Desktop\YOLO\trained_model\MA_model-20240819T084430Z-001\MA_model\weights\last.pt")
 
-    pathCleanedDataset = r"C:\Users\mseesunkur\YOLO\cleaning_dataset\data.yaml"
-    pathModel = r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
+    pathCleanedDataset = r"C:\Users\mseesunker\Desktop\YOLO\trained_model\MA_model-20240819T084430Z-001\train_yolo_continue\YOLO_training_MA\data.yaml"
+    pathModel = r"C:\Users\mseesunker\Desktop\YOLO\trained_model\MA_model-20240819T084430Z-001\MA_model_continue"
 
     results = model.train(
         data=pathCleanedDataset,
@@ -67,10 +67,11 @@ def main():
         name="MA_model",
         project=pathModel,
         save=True,
-        device=(0,1,2),
-        patience=50,
-        batch=15,
-        save_dir=r"C:\Users\mseesunkur\YOLO\training\YOLO_training_MA"
+        device=0,
+        epoch=200,
+        #patience=50,
+        batch=16,
+        save_dir=r"C:\Users\mseesunker\Desktop\YOLO\trained_model\MA_model-20240819T084430Z-001\MA_model"
     )
 
 if __name__ == '__main__':
